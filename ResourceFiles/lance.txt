@@ -1,0 +1,2 @@
+@echo off
+bsub -a lspasswd -q mygale -sp <priority> -n 1,<maxCPU> -R "span[hosts=1]  rusage[] select[ <submissionOption>]" -J <jobName><imgIndex> -o <path>mygale\TEMP\<jobName>\lsf\LSF_log.txt <path>mygale\TEMP\<jobName>\lsf\<jobName>.bat

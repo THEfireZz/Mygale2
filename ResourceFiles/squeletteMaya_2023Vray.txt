@@ -1,0 +1,25 @@
+@echo off
+setlocal EnableDelayedExpansion
+
+set MAYA_PACKAGE_PATH=\\yvuhn002\nt02\V3\maya_64b.V2023R2I1\apl_server\Maya_2023
+set MAYA_LOCATION=%MAYA_PACKAGE_PATH%\Maya2023
+set AUTODESK_ADLM_THINCLIENT_ENV=%MAYA_PACKAGE_PATH%\PIT\AdlmThinClientCustomEnv.xml
+set ADSKFLEX_LICENSE_FILE=2080@slc2win1;2080@slc2win2;2080@slc2win3
+set MAYA_LEGACY_THINCLIENT=1
+set MAYA_APP_DIR=C:\TEMP
+
+set VRAY_PATH=%MAYA_PACKAGE_PATH%\VRAY\vray_60002_maya2023
+set VRAY_AUTH_CLIENT_FILE_PATH=%MAYA_PACKAGE_PATH%\VRAY
+
+set MAYA_MODULE_PATH=%MAYA_LOCATION%\modules;%MAYA_PACKAGE_PATH%\Bifrost\Maya2023\2.5.1.0;%MAYA_PACKAGE_PATH%\Arnold\maya2023;%VRAY_PATH%\maya_root\modules
+set MAYA_PLUG_IN_PATH=%MAYA_PACKAGE_PATH%\Bifrost\Maya2023\2.5.1.0\bifrost\plug-ins;%MAYA_PACKAGE_PATH%\Arnold\maya2023\plug-ins;%MAYA_PACKAGE_PATH%\MayaUSD\Maya2023\0.19.0\mayausd\MayaUSD\plugin\adsk\plugin;%MAYA_PACKAGE_PATH%\Craft Animations
+set MAYA_SCRIPT_PATH=%MAYA_PACKAGE_PATH%\MayaTools
+
+
+set PATH=%VRAY_PATH%\maya_vray\bin\hostbin;%VRAY_PATH%\maya_vray\bin;%MAYA_PACKAGE_PATH%\DirectMayaPlugin;%PATH%
+
+set /A CALC_IMAGE=%LSB_JOBINDEX%<deb_0>
+
+
+"%MAYA_LOCATION%\bin\render.exe" -r vray -s %CALC_IMAGE% -e %CALC_IMAGE%  -rd "<dossierImages>" <name> <format> <camera> "<scene>"  >> "<path>mygale\TEMP\<jobName>\appli"\%LSB_JOBID%_%CALC_IMAGE%_%COMPUTERNAME%_<jobName>.txt
+

@@ -1,0 +1,37 @@
+@echo off
+setlocal EnableDelayedExpansion
+
+set /A CALC_IMAGE=%LSB_JOBINDEX%
+rem set /A CALC_IMAGE=1
+echo from vrSequencer import * > <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo from vrRenderQueue import * >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo from vrController import * >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo from vrMovieExport import * >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo from vrOSGWidget import * >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo from vrCamera import * >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo from vrRenderSettings import * >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo import traceback >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo def DeadlineRender(): >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo     try: >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderQuality(VR_QUALITY_REALISTIC_HIGH) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderPixelResolution(1920, 1080, 72) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderAnimation(True) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderStartFrame(%CALC_IMAGE%) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderFrameStep(1) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderStopFrame(%CALC_IMAGE%) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderAnimationFormat(0) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderAnimationType(0) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderAnimationClip("<camera>") >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderAlpha(True) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderPremultiply(True) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderTonemapHDR(False) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         setRenderFilename("<dossierImages><name>.<format>") >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         startRenderToFile(True) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo     except: >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         print(traceback.format_exc()) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         crashVred(1) >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo     finally: >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo         terminateVred() >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+echo DeadlineRender() >> <path>\mygale\TEMP\<jobName>\appli\VRED_REnder%CALC_IMAGE%.py
+
+"C:\palette\apl\vred\VREDPro-15.2\bin\WIN64\VREDPro.exe" "<scene>" "<path>\mygale\TEMP\<jobName>\appli\VRED_REnder"%CALC_IMAGE%.py -nogui >> "<path>mygale\TEMP\test_blender_10\appli"\%LSB_JOBID%_%CALC_IMAGE%_%COMPUTERNAME%_test_blender_10.txt

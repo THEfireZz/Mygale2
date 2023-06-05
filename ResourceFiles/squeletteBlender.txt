@@ -1,0 +1,8 @@
+@echo off
+setlocal EnableDelayedExpansion
+
+set /A CALC_IMAGE=%LSB_JOBINDEX%
+
+
+"\\yvshn002\_dsty_stco\DNS\SOFTWARES\OUVERT_DSTY\Blender\Blender 3.4\blender.exe" -b "<scene>" -t 0 -x 1 -o "<dossierImages><name>_####" <format> -f %CALC_IMAGE% -- --cycles-device CUDA >> "<path>mygale\TEMP\<jobName>\appli"\%LSB_JOBID%_%CALC_IMAGE%_%COMPUTERNAME%_<jobName>.txt
+

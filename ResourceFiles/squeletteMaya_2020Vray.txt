@@ -1,0 +1,41 @@
+@echo off
+setlocal EnableDelayedExpansion
+
+
+set MAYA_LOCATION=\\yvuhn002\nt02\V3\maya_64b.V2020R0I1\apl_server\Maya2020
+set AUTODESK_ADLM_THINCLIENT_ENV=%MAYA_LOCATION%\PIT\AdlmThinClientCustomEnv.xml
+set ADSKFLEX_LICENSE_FILE=2080@slc2win1;2080@slc2win2;2080@slc2win3
+set MAYA_LEGACY_THINCLIENT=1
+
+
+set MAYA_APP_DIR=C:\TEMP
+set MAYA_DISABLE_CIP=1
+set MAYA_MRFM_SHOW_CUSTOM_SHADERS=1
+set MAYA_TO_TBB=1
+set MI_LIBRARY_PATH=%MAYA_LOCATION%\bin
+set TEMP=C:\TEMP\MAYA
+
+set VRAY_PATH=%MAYA_LOCATION%\VRAY\vray_adv_50020_maya2020_x64
+
+set MAYA_RENDER_DESC_PATH=%VRAY_PATH%\maya_root\bin\rendererDesc
+set VRAY_FOR_MAYA2020_MAIN=%VRAY_PATH%\maya_vray
+set VRAY_FOR_MAYA2020_PLUGINS=%VRAY_PATH%\maya_vray\vrayplugins
+set VRAY_PLUGINS=%VRAY_PATH%\maya_vray\vrayplugins
+set VRAY_OSL_PATH_MAYA2020=%VRAY_PATH%\vray\opensl
+set VRAY_AUTH_CLIENT_FILE_PATH=%MAYA_LOCATION%\vray
+
+
+
+set MAYA_PLUG_IN_PATH=%VRAY_PATH%\maya_vray\plug-ins
+set MAYA_SCRIPT_PATH=%VRAY_PATH%\maya_vray\scripts
+set PYTHONPATH=%VRAY_PATH%\maya_vray\scripts
+set XBMLANGPATH=%VRAY_PATH%\maya_vray\icons
+
+set PATH=%VRAY_PATH%\maya_root\bin;%PATH%
+
+
+
+set /A CALC_IMAGE=%LSB_JOBINDEX%
+
+"%MAYA_LOCATION%\bin\render.exe" -r vray -s %CALC_IMAGE% -e %CALC_IMAGE%  -rd "<dossierImages>" <name> <format> <camera> "<scene>"  >> "<path>mygale\TEMP\<jobName>\appli"\%LSB_JOBID%_%CALC_IMAGE%_%COMPUTERNAME%_<jobName>.txt
+

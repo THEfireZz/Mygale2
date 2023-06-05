@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/MainWindowView"/>
+    <qresource prefix="/config">
+        <file>mainConfig.xml</file>
+    </qresource>
+    <qresource prefix="/Skeleton">
+        <file>squeletteBlender.txt</file>
+        <file>squeletteMaya_2020Vray.txt</file>
+        <file>squeletteMaya_2023Vray.txt</file>
+        <file>squeletteVred.txt</file>
+        <file>squeletteAnalysis.txt</file>
+    </qresource>
+    <qresource prefix="/lance">
+        <file>lance.txt</file>
+        <file>lanceAnalysis.txt</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>mygale2.ico</file>
+    </qresource>
+</RCC>

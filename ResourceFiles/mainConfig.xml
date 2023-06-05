@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<MainConfig>
+	<JobType>
+		<Option>
+			<name>Maya_2020/Vray</name>
+			<skeleton>squeletteMaya_2020Vray.txt</skeleton>
+			<Format>Alias [*.als]</Format>
+			<Format>BMP [*.bmp]</Format>
+			<Format>DDS [*.dds]</Format>
+			<Format>GIF [*.gif]</Format>
+			<Format>JPEG [*.jpg]</Format>
+			<Format>Maya_IFF [*.iff]</Format>
+			<Format>Photoshop [*.psd]</Format>
+			<Format>Kodak Cineon [*.cin]</Format>
+			<Format>PNG [*.png]</Format>
+			<Format>PostScript_Encapsulated [*.eps]</Format>
+			<Format>Quantel [*.yuv]</Format>
+			<Format>Softimage [*.pic]</Format>
+			<Format>Targa [*.tga]</Format>
+			<Format>TIFF [*.tif]</Format>
+			<Format>Wavefront [*.rla]</Format>
+			<Format>XPM [*.xpm]</Format>
+			<NameOption>-im </NameOption>
+			<FormatOption>-of </FormatOption>
+			<FormatOption>-of </FormatOption>
+		</Option>
+		<Option>
+			<name>Maya_2023/Vray</name>
+			<skeleton>squeletteMaya_2023Vray.txt</skeleton>
+			<Format>Alias [*.als]</Format>
+			<Format>BMP [*.bmp]</Format>
+			<Format>DDS [*.dds]</Format>
+			<Format>GIF [*.gif]</Format>
+			<Format>JPEG [*.jpg]</Format>
+			<Format>Maya_IFF [*.iff]</Format>
+			<Format>Photoshop [*.psd]</Format>
+			<Format>Kodak Cineon [*.cin]</Format>
+			<Format>PNG [*.png]</Format>
+			<Format>PostScript_Encapsulated [*.eps]</Format>
+			<Format>Quantel [*.yuv]</Format>
+			<Format>Softimage [*.pic]</Format>
+			<Format>Targa [*.tga]</Format>
+			<Format>TIFF [*.tif]</Format>
+			<Format>Wavefront [*.rla]</Format>
+			<Format>XPM [*.xpm]</Format>
+			<NameOption>-im </NameOption>
+			<CameraOption>-cam </CameraOption>
+			
+		</Option>
+		<Option>
+			<name>Blender</name>
+			<skeleton>squeletteBlender.txt</skeleton>
+			<FormatOption>-F </FormatOption>
+			<Format>PNG [*.png]</Format>
+			<Format>JPEG [*.jpg]</Format>
+			<Format>OPEN_EXR [*.exr]</Format>
+			<Format>TGA [*.tga]</Format>
+			<Format>TIFF [*.tif]</Format>
+			<Format>BMP [*.bmp]</Format>
+			<Format>DDS [*.dds]</Format>
+			<Required>format</Required>
+			<Required>name</Required>
+			<CameraOption>-cam </CameraOption>
+		</Option>
+		<Option>
+			<name>Vred</name>
+			<skeleton>squeletteVred.txt</skeleton>
+			<Format>Microsoft Windows Bitmap [*.bmp]</Format>
+			<Format>DDS [*.dds]</Format>
+			<Format>OpenEXR [*.exr]</Format>
+			<Format>JPEG [*.jpeg]</Format>
+			<Format>PNG [*.png]</Format>
+			<Format>TIFF [*.tif]</Format>
+			<Format>Photoshop Large Document Format [*.psb]</Format>
+			<Format>VRED Image Format [*.vif]</Format>
+			<Format>ZIP [*.zip]</Format>
+			<Required>format</Required>
+			<Required>camera</Required>
+			<Required>name</Required>
+		</Option>
+
+	</JobType>
+</MainConfig>

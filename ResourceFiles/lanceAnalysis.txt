@@ -1,0 +1,2 @@
+@echo off
+bsub -a lspasswd -q mygale -n 1,<maxCPU> -w "ended(<previousJobID>)" -R "span[hosts=1] rusage[] select[ <submissionOption>]" -J <jobName>_analysis -o <path>mygale\TEMP\<jobName>\lsf\LSF_Analysis_log.txt <path>Mygale\TEMP\<jobName>\lsf\<jobName>_analysis.bat
