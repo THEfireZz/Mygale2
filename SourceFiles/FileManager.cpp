@@ -192,7 +192,6 @@ FileManager::FileManager(QString joType, QString jobName, QString scene, QString
 	createOutputFolder();
 }
 
-
 void FileManager::createOutputFolder()
 {
 	QFileInfo fileInfo(m_outputFilePath);

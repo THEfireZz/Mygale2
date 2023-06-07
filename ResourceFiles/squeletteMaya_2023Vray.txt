@@ -18,7 +18,7 @@ set MAYA_SCRIPT_PATH=%MAYA_PACKAGE_PATH%\MayaTools
 
 set PATH=%VRAY_PATH%\maya_vray\bin\hostbin;%VRAY_PATH%\maya_vray\bin;%MAYA_PACKAGE_PATH%\DirectMayaPlugin;%PATH%
 
-set /A CALC_IMAGE=%LSB_JOBINDEX%<deb_0>
+set /A CALC_IMAGE=%LSB_JOBINDEX%
 
 
 "%MAYA_LOCATION%\bin\render.exe" -r vray -s %CALC_IMAGE% -e %CALC_IMAGE%  -rd "<dossierImages>" <name> <format> <camera> "<scene>"  >> "<path>mygale\TEMP\<jobName>\appli"\%LSB_JOBID%_%CALC_IMAGE%_%COMPUTERNAME%_<jobName>.txt

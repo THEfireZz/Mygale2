@@ -23,7 +23,7 @@
 			<Format>XPM [*.xpm]</Format>
 			<NameOption>-im </NameOption>
 			<FormatOption>-of </FormatOption>
-			<FormatOption>-of </FormatOption>
+			<CameraOption>-cam </CameraOption>
 		</Option>
 		<Option>
 			<name>Maya_2023/Vray</name>
@@ -45,7 +45,9 @@
 			<Format>Wavefront [*.rla]</Format>
 			<Format>XPM [*.xpm]</Format>
 			<NameOption>-im </NameOption>
+			<FormatOption>-of </FormatOption>
 			<CameraOption>-cam </CameraOption>
+			
 			
 		</Option>
 		<Option>
@@ -61,7 +63,7 @@
 			<Format>DDS [*.dds]</Format>
 			<Required>format</Required>
 			<Required>name</Required>
-			<CameraOption>-cam </CameraOption>
+			<FormatOption>-F </FormatOption>
 		</Option>
 		<Option>
 			<name>Vred</name>

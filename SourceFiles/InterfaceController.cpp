@@ -46,7 +46,7 @@ InterfaceController::InterfaceController(MainWindowView* mainWindowView, QObject
 	connect(mainWindowView, &MainWindowView::memoryDoubleSpinBoxChanged, this, &InterfaceController::handleMemoryDoubleSpinBoxChanged);
 	connect(mainWindowView, &MainWindowView::analysisCheckBoxClicked, this, &InterfaceController::handleAnalysisCheckBoxClicked);
 	connect(mainWindowView, &MainWindowView::ressubmissionCheckBoxClicked, this, &InterfaceController::handleRessubmissionCheckBoxClicked);
-	changePermissionsRecursively(m_configFolderPath);
+	changeConfigFilesPermissions(m_configFolderPath);
 	loadPreviousSession();
 }
 
@@ -176,7 +176,8 @@ void InterfaceController::loadFormat(QFile& configFile)
 		return;
 	}
 }
-void InterfaceController::changePermissionsRecursively(const QString& path)
+
+void InterfaceController::changeConfigFilesPermissions(const QString& path)
 {
 	QDir directory(path);
 	directory.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
@@ -194,7 +195,7 @@ void InterfaceController::changePermissionsRecursively(const QString& path)
 	QStringList subdirs = directory.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
 	foreach(QString subdir, subdirs) {
 		QString subpath = path + QDir::separator() + subdir;
-		changePermissionsRecursively(subpath);
+		changeConfigFilesPermissions(subpath);
 	}
 }
 
@@ -211,7 +212,7 @@ void InterfaceController::handleImageDirectoryPushButtonClicked()
 	if (!folderPath.isEmpty()) {
 		// Utiliser le chemin du dossier selectionne
 		
-		m_mainWindowView->getImageDirectorylineEdit()->setText(folderPath + "/");
+		m_mainWindowView->getImageDirectorylineEdit()->setText(folderPath);
 	}
 }
 

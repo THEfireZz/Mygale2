@@ -16,7 +16,7 @@ private:
 	void loadConfigFile();
 	void extractConfig(QFile& configFile);
 	void loadFormat(QFile& configFile);
-	void changePermissionsRecursively(const QString& path);
+	void changeConfigFilesPermissions(const QString& path);
 	
 public slots:
 	void handleJobNamePushButtonClicked();

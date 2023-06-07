@@ -25,6 +25,7 @@ private:
 	QString getFirstImageIndex();
 	QString getLastImageIndex();
 	QString getName();
+	QString getRawName();
 	QString getFormat();
 	QString getRawFormat();
 	QString getjobTypeOption(QString option);

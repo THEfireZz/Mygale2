@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set "folder=<dossierImages>"
+set "folder=<dossierImages>\"
 set "start=<firstImg>"
 set "end=<lastImg>"
 set "extension=.<format>"

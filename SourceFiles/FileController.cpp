@@ -93,7 +93,7 @@ void FileController::createDefaultJob(QString priority)
 	
 	if (m_mainWindowView->getAnalysischeckBox()->isChecked())
 	{
-		FileManager analysisSkeleton = FileManager::Builder().jobName(jobName).scene(scene).dossierImage(imageFolder).name(name).format(getRawFormat()).firstImg(getFirstImageIndex()).lastImg(getLastImageIndex()).priority(priority).maxCPU(maxCpu).submissionOption(submissionOption).fileName(jobName + "_analysis").build();
+		FileManager analysisSkeleton = FileManager::Builder().jobName(jobName).scene(scene).dossierImage(imageFolder).name(getRawName()).format(getRawFormat()).firstImg(getFirstImageIndex()).lastImg(getLastImageIndex()).priority(priority).maxCPU(maxCpu).submissionOption(submissionOption).fileName(jobName + "_analysis").build();
 		FileManager analysisLance = FileManager::Builder().jobName(jobName).submissionOption(submissionOption).maxCPU(maxCpu).previousJobId(previousJobId).fileName("lance_analysis").build();
 		
 
@@ -269,15 +269,20 @@ QString FileController::getName()
 	if (m_mainWindowView->getNameCheckBox()->isChecked())
 	{
 		QString nameOption = getjobTypeOption("NameOption");
-		QString name = m_mainWindowView->getNameLineEdit()->text();
+		QString name = getRawName();
 		if (!name.isEmpty())
 		{
 			qDebug() << "name option : " + (nameOption + name);
-			return nameOption + m_mainWindowView->getNameLineEdit()->text();
+			return nameOption + name;
 		}
 		
 	}
 	return "";
+}
+
+QString FileController::getRawName()
+{
+	return m_mainWindowView->getNameLineEdit()->text();
 }
 
 QString FileController::getFormat()
