@@ -4,6 +4,8 @@
 #include <QSettings>
 int main(int argc, char *argv[])
 {
+    QSettings settings("Stellantis", "Mygale");
+    //settings.clear();
     QApplication a(argc, argv);
     MainWindowView w;
     InterfaceController interface(&w);

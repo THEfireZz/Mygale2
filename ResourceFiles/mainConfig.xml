@@ -5,23 +5,13 @@
 		<Option>
 			<name>Maya_2020/Vray</name>
 			<skeleton>squeletteMaya_2020Vray.txt</skeleton>
-			<Format>Alias [*.als]</Format>
 			<Format>Microsoft Windows Bitmap [*.bmp]</Format>
-			<Format>DDS [*.dds]</Format>
-			<Format>GIF [*.gif]</Format>
 			<Format>JPEG [*.jpg]</Format>
-			<Format>Maya IFF [*.iff]</Format>
-			<Format>Photoshop [*.psd]</Format>
-			<Format>Kodak Cineon [*.cin]</Format>
 			<Format>PNG [*.png]</Format>
-			<Format>PostScript Encapsulated [*.eps]</Format>
-			<Format>Quantel [*.yuv]</Format>
 			<Format>Silicon Graphics [*.sgi]</Format>
 			<Format>Softimage [*.pic]</Format>
 			<Format>Targa [*.tga]</Format>
 			<Format>TIFF [*.tif]</Format>
-			<Format>Wavefront [*.rla]</Format>
-			<Format>XPM [*.xpm]</Format>
 			<NameOption>-im </NameOption>
 			<FormatOption>-of </FormatOption>
 			<CameraOption>-cam </CameraOption>
@@ -29,23 +19,13 @@
 		<Option>
 			<name>Maya_2023/Vray</name>
 			<skeleton>squeletteMaya_2023Vray.txt</skeleton>
-			<Format>Alias [*.als]</Format>
 			<Format>Microsoft Windows Bitmap [*.bmp]</Format>
-			<Format>DDS [*.dds]</Format>
-			<Format>GIF [*.gif]</Format>
 			<Format>JPEG [*.jpg]</Format>
-			<Format>Maya IFF [*.iff]</Format>
-			<Format>Photoshop [*.psd]</Format>
-			<Format>Kodak Cineon [*.cin]</Format>
 			<Format>PNG [*.png]</Format>
-			<Format>PostScript Encapsulated [*.eps]</Format>
-			<Format>Quantel [*.yuv]</Format>
 			<Format>Silicon Graphics [*.sgi]</Format>
 			<Format>Softimage [*.pic]</Format>
 			<Format>Targa [*.tga]</Format>
 			<Format>TIFF [*.tif]</Format>
-			<Format>Wavefront [*.rla]</Format>
-			<Format>XPM [*.xpm]</Format>
 			<NameOption>-im </NameOption>
 			<FormatOption>-of </FormatOption>
 			<CameraOption>-cam </CameraOption>
