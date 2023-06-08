@@ -11,7 +11,7 @@ set count=0
 for /l %%i in (%start%,1,%end%) do (
    set num=000%%i
    set num=!num:~-4!
-   set "filename=%folder%%image%_!num!%extension%"
+   set "filename=%folder%%image%*!num!%extension%"
    echo !filename!
    if not exist "!filename!" (
         set listeImages=!listeImages!%%i,

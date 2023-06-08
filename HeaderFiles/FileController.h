@@ -17,6 +17,8 @@ private:
 	QString getPreviousJobId(const QString& output);
 	void addRessubmission(FileManager& fileManager);
 
+	
+
 	QString getJobType();
 	QString getJobName();
 	QString getScene();
@@ -38,5 +40,6 @@ private:
 
 public slots:
 	void handleStandartPushButtonCliked();
+	void handlePriorityPushButtonCliked();
 };
 

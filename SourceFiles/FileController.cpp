@@ -49,7 +49,9 @@ void FileController::createDefaultJob(QString priority)
 
 	QString imagesIndex =getImagesIndex();
 
-	QString format = getFormat();
+
+	QString format =getFormat();;
+	
 	if (format.isEmpty())
 	{
 		if (m_mainWindowView->getAnalysischeckBox()->isChecked()) {
@@ -120,6 +122,7 @@ void FileController::createDefaultJob(QString priority)
 void FileController::connecting()
 {
 	connect(m_mainWindowView, &MainWindowView::standartPushButtonCliked, this, &FileController::handleStandartPushButtonCliked);
+	connect(m_mainWindowView, &MainWindowView::priorityPushButtonCliked, this, &FileController::handlePriorityPushButtonCliked);
 }
 
 QString FileController::getPreviousJobId(const QString& output)
@@ -144,6 +147,11 @@ void FileController::handleStandartPushButtonCliked()
 {
 	createDefaultJob("50");
 }
+void FileController::handlePriorityPushButtonCliked()
+{
+	createDefaultJob("75");
+}
+
 
 QString FileController::getJobType()
 {
@@ -293,12 +301,20 @@ QString FileController::getFormat()
 		QString result;
 		if (!formatOption.isEmpty())
 		{
-			QRegularExpression regex(R"(\b(.*?)\s*\[\*\.)");
-			QRegularExpressionMatch match = regex.match(selection);
-			
-			if (match.hasMatch()) {
-				result = match.captured(1);
+			if (m_mainWindowView->getJobTypeComboBox()->currentText() != "Blender")
+			{
+				result = getRawFormat();
 			}
+			else
+			{
+				QRegularExpression regex(R"(\b(.*?)\s*\[\*\.)");
+				QRegularExpressionMatch match = regex.match(selection);
+
+				if (match.hasMatch()) {
+					result = match.captured(1);
+				}
+			}
+			
 		}
 		else
 		{

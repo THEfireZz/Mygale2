@@ -42,6 +42,7 @@ private:
 public slots:
 
     void onStandartPushButtonCliked();
+    void onPriorityPushButtonCliked();
     void onJobNamePushButtonCliked();
     void onSceneSelectionPushButtonCliked();
     void onImageDirectoryPushButtonCliked();
@@ -69,6 +70,7 @@ public slots:
 
 signals:
     void standartPushButtonCliked();
+    void priorityPushButtonCliked();
     void jobNamePushButtonCliked();
     void sceneSelectionPushButtonCliked();
     void imageDirectoryPushButtonCliked();

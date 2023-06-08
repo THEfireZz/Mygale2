@@ -17,6 +17,7 @@ MainWindowView::~MainWindowView()
 void MainWindowView::startConnection()
 {
     connect(ui.StandartPushButton, &QPushButton::clicked, this, &MainWindowView::standartPushButtonCliked);
+    connect(ui.PriorityStartPushButton, &QPushButton::clicked, this, &MainWindowView::priorityPushButtonCliked);
     connect(ui.JobNamepushButton, &QPushButton::clicked, this, &MainWindowView::jobNamePushButtonCliked);
     connect(ui.SceneSelectionPushButton, &QPushButton::clicked, this, &MainWindowView::sceneSelectionPushButtonCliked);
     connect(ui.ImageDirectoryPushButton, &QPushButton::clicked, this, &MainWindowView::imageDirectoryPushButtonCliked);
@@ -191,8 +192,11 @@ void MainWindowView::saveGridLayout()
 
 void MainWindowView::onStandartPushButtonCliked()
 {
-    qDebug() << "mainPush";
     emit standartPushButtonCliked();
+}
+void MainWindowView::onPriorityPushButtonCliked()
+{
+    emit priorityPushButtonCliked();
 }
 
 void MainWindowView::onJobNamePushButtonCliked()
